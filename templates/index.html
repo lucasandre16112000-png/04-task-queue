@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Queue Dashboard - Sistema de Fila de Tarefas</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">⚙️</span>
+                    <h1>Task Queue Dashboard</h1>
+                </div>
+                <p class="subtitle">Sistema de Fila de Tarefas Distribuído</p>
+            </div>
+        </header>
+
+        <!-- Statistics Cards -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card total">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-total">0</span>
+                        <span class="stat-label">Total de Tarefas</span>
+                    </div>
+                </div>
+                <div class="stat-card pending">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-pending">0</span>
+                        <span class="stat-label">Pendentes</span>
+                    </div>
+                </div>
+                <div class="stat-card processing">
+                    <div class="stat-icon">🔄</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-processing">0</span>
+                        <span class="stat-label">Processando</span>
+                    </div>
+                </div>
+                <div class="stat-card completed">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-completed">0</span>
+                        <span class="stat-label">Concluídas</span>
+                    </div>
+                </div>
+                <div class="stat-card failed">
+                    <div class="stat-icon">❌</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-failed">0</span>
+                        <span class="stat-label">Falhadas</span>
+                    </div>
+                </div>
+                <div class="stat-card success-rate">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-success-rate">0%</span>
+                        <span class="stat-label">Taxa de Sucesso</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="actions-section">
+            <h2 class="section-title">🚀 Criar Nova Tarefa</h2>
+            <div class="actions-grid">
+                <button class="action-btn email" onclick="createTask('send_email')">
+                    <span class="btn-icon">📧</span>
+                    <span class="btn-text">Enviar Email</span>
+                    <span class="btn-desc">Simula envio de email</span>
+                </button>
+                <button class="action-btn report" onclick="createTask('generate_report')">
+                    <span class="btn-icon">📄</span>
+                    <span class="btn-text">Gerar Relatório</span>
+                    <span class="btn-desc">Cria relatório PDF</span>
+                </button>
+                <button class="action-btn image" onclick="createTask('process_image')">
+                    <span class="btn-icon">🖼️</span>
+                    <span class="btn-text">Processar Imagem</span>
+                    <span class="btn-desc">Aplica filtros na imagem</span>
+                </button>
+                <button class="action-btn sync" onclick="createTask('sync_data')">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Sincronizar Dados</span>
+                    <span class="btn-desc">Sincroniza bancos de dados</span>
+                </button>
+                <button class="action-btn cleanup" onclick="createTask('cleanup')">
+                    <span class="btn-icon">🧹</span>
+                    <span class="btn-text">Limpar Cache</span>
+                    <span class="btn-desc">Remove dados temporários</span>
+                </button>
+                <button class="action-btn all" onclick="createAllTasks()">
+                    <span class="btn-icon">⚡</span>
+                    <span class="btn-text">Executar Todas</span>
+                    <span class="btn-desc">Cria todas as tarefas</span>
+                </button>
+            </div>
+            <div class="actions-footer">
+                <button class="clear-btn" onclick="clearAllTasks()">
+                    🗑️ Limpar Todas as Tarefas
+                </button>
+            </div>
+        </section>
+
+        <!-- Tasks List -->
+        <section class="tasks-section">
+            <div class="tasks-header">
+                <h2 class="section-title">📋 Lista de Tarefas</h2>
+                <button class="refresh-btn" onclick="loadTasks()">🔄 Atualizar</button>
+            </div>
+            <div class="tasks-container" id="tasks-container">
+                <div class="empty-state" id="empty-state">
+                    <span class="empty-icon">📭</span>
+                    <p>Nenhuma tarefa criada ainda.</p>
+                    <p class="empty-hint">Clique em um dos botões acima para criar uma tarefa!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Desenvolvido por <strong>Lucas André S</strong></p>
+            <p>
+                <a href="https://github.com/lucasandre16112000-png" target="_blank">GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon" id="toast-icon">✅</span>
+        <span class="toast-message" id="toast-message">Mensagem</span>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
