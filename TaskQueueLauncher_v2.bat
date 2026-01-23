@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================================
-REM TASK QUEUE LAUNCHER v2 - VERSAO SIMPLIFICADA
+REM TASK QUEUE LAUNCHER v2 - VERSAO SIMPLIFICADA E CORRIGIDA
 REM Executável para Windows - Instala e roda tudo automaticamente
 REM ============================================================================
 
@@ -17,6 +17,9 @@ echo                    TASK QUEUE LAUNCHER - INICIANDO...
 echo.
 echo ================================================================================
 echo.
+
+REM Ir para a pasta do script
+cd /d "%~dp0"
 
 REM Passo 1: Verificar Python
 echo [PASSO 1] Verificando Python...
@@ -60,7 +63,7 @@ set INSTALL_DIR=%USERPROFILE%\TaskQueue
 set PROJECT_DIR=%INSTALL_DIR%\04-task-queue
 
 if not exist "%INSTALL_DIR%" mkdir "%INSTALL_DIR%"
-echo [OK] Diretorio criado: %INSTALL_DIR%
+echo [OK] Diretorio criado
 echo.
 
 REM Passo 4: Verificar se projeto existe
@@ -115,12 +118,30 @@ REM Iniciar em background
 start /B python app.py >nul 2>&1
 
 echo Aguardando servidor iniciar...
-timeout /t 3 /nobreak >nul
 
-echo [OK] Servidor iniciado
+REM Aguardar servidor ficar online (máximo 30 segundos)
+set /a count=0
+:wait_loop
+set /a count=!count!+1
+
+if !count! gtr 30 (
+    echo [AVISO] Timeout ao aguardar servidor
+    goto :open_browser
+)
+
+REM Tentar conectar ao servidor
+powershell -Command "try { $response = Invoke-WebRequest -Uri 'http://localhost:5000' -TimeoutSec 1 -ErrorAction Stop; exit 0 } catch { exit 1 }" >nul 2>&1
+
+if errorlevel 1 (
+    timeout /t 1 /nobreak >nul
+    goto :wait_loop
+)
+
+echo [OK] Servidor esta online!
 echo.
 
 REM Passo 7: Abrir navegador
+:open_browser
 echo [PASSO 6] Abrindo dashboard...
 start http://localhost:5000
 
