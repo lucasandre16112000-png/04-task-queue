@@ -1,7 +1,7 @@
 @echo off
 REM ============================================================================
 REM TASK QUEUE - INICIAR DASHBOARD
-REM Versao corrigida que funciona 100%
+REM Versao final que funciona 100%
 REM ============================================================================
 
 setlocal enabledelayedexpansion
@@ -52,13 +52,22 @@ echo.
 
 echo [3] Iniciando servidor...
 echo.
+
+REM Iniciar servidor em background
+start "" /B python app.py
+
+REM Aguardar servidor iniciar
+echo Aguardando servidor iniciar...
+timeout /t 3 /nobreak >nul
+
+echo.
 echo Acesse: http://localhost:5000
 echo Pressione Ctrl+C para encerrar
 echo.
 echo ================================================================================
 echo.
 
-REM Iniciar Flask
-python app.py
+REM Abrir navegador
+start http://localhost:5000
 
 pause

@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================================
-REM TASK QUEUE LAUNCHER v2 - VERSAO SIMPLIFICADA E CORRIGIDA
+REM TASK QUEUE LAUNCHER v2 - VERSAO FINAL
 REM Executável para Windows - Instala e roda tudo automaticamente
 REM ============================================================================
 
@@ -114,8 +114,8 @@ REM Passo 6: Iniciar servidor
 echo [PASSO 5] Iniciando servidor...
 cd /d "%PROJECT_DIR%"
 
-REM Iniciar em background
-start /B python app.py >nul 2>&1
+REM Iniciar Flask em background (sem janela)
+start "" /B python app.py
 
 echo Aguardando servidor iniciar...
 
@@ -129,7 +129,7 @@ if !count! gtr 30 (
     goto :open_browser
 )
 
-REM Tentar conectar ao servidor
+REM Tentar conectar ao servidor usando PowerShell
 powershell -Command "try { $response = Invoke-WebRequest -Uri 'http://localhost:5000' -TimeoutSec 1 -ErrorAction Stop; exit 0 } catch { exit 1 }" >nul 2>&1
 
 if errorlevel 1 (
