@@ -11,6 +11,10 @@ import webbrowser
 import os
 
 def main():
+    # Mudar para a pasta do script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
+    
     print("\n" + "="*70)
     print("TASK QUEUE DASHBOARD".center(70))
     print("="*70 + "\n")
@@ -26,8 +30,13 @@ def main():
         print(f"    Flask OK\n")
     except ImportError:
         print("    Instalando Flask...")
-        subprocess.run([sys.executable, "-m", "pip", "install", "flask", "--quiet"], check=True)
-        print("    Flask instalado OK\n")
+        try:
+            subprocess.run([sys.executable, "-m", "pip", "install", "flask", "--quiet"], check=True)
+            print("    Flask instalado OK\n")
+        except:
+            print("    [ERRO] Falha ao instalar Flask!")
+            input("Pressione ENTER para sair...")
+            sys.exit(1)
     
     # Iniciar servidor
     print("[3] Iniciando servidor...\n")
@@ -50,4 +59,9 @@ def main():
         sys.exit(0)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"\n[ERRO] {e}")
+        input("Pressione ENTER para sair...")
+        sys.exit(1)
