@@ -1,136 +1,136 @@
-# 🐍 Guia Python - Tudo que Você Precisa Saber
+# 🐍 Python Guide - Everything You Need to Know
 
-## ⚡ Resumo em 1 Linha
+## ⚡ Summary in 1 Line
 
-**Você PRECISA ter Python instalado. É o único pré-requisito!**
-
----
-
-## ❓ O que é Python?
-
-Python é uma **linguagem de programação** que o projeto usa para funcionar.
-
-Sem Python = Projeto não funciona!
+**You NEED to have Python installed. It's the only requirement!**
 
 ---
 
-## ✅ Como Verificar se Você Tem Python
+## ❓ What is Python?
 
-### Passo 1: Abra CMD ou PowerShell
+Python is a **programming language** that the project uses to work.
 
-- **Windows 10/11:** Pressione `Win + R`, digite `cmd`, pressione Enter
-- Ou procure por "PowerShell" no menu Iniciar
+No Python = Project doesn't work!
 
-### Passo 2: Digite este comando
+---
+
+## ✅ How to Check if You Have Python
+
+### Step 1: Open CMD or PowerShell
+
+- **Windows 10/11:** Press `Win + R`, type `cmd`, press Enter
+- Or search for "PowerShell" in the Start menu
+
+### Step 2: Type this command
 
 ```bash
 python --version
 ```
 
-### Passo 3: Veja o resultado
+### Step 3: See the result
 
-**Se aparecer algo como:**
+**If it shows something like:**
 ```
 Python 3.12.10
 ```
 
-✅ **Parabéns! Você tem Python!** Pode usar o projeto!
+✅ **Congratulations! You have Python!** You can use the project!
 
-**Se aparecer:**
+**If it shows:**
 ```
 'python' is not recognized as an internal or external command
 ```
 
-❌ **Python não está instalado.** Siga os passos abaixo!
+❌ **Python is not installed.** Follow the steps below!
 
 ---
 
-## 📥 Como Instalar Python
+## 📥 How to Install Python
 
-### Passo 1: Baixar Python
+### Step 1: Download Python
 
-1. Acesse: https://www.python.org/downloads/
-2. Clique no botão grande amarelo **"Download Python 3.x.x"**
-3. Salve o arquivo
+1. Visit: https://www.python.org/downloads/
+2. Click the big yellow button **"Download Python 3.x.x"**
+3. Save the file
 
-### Passo 2: Executar o Instalador
+### Step 2: Run the Installer
 
-1. Dê duplo clique no arquivo baixado
-2. Uma janela vai abrir
+1. Double-click the downloaded file
+2. A window will open
 
-### Passo 3: Instalação (IMPORTANTE!)
+### Step 3: Installation (IMPORTANT!)
 
-1. **Marque a opção "Add Python to PATH"** ← **ISSO É OBRIGATÓRIO!**
-2. Clique em **"Install Now"**
-3. Aguarde terminar
-4. Clique em **"Close"**
+1. **Check the option "Add Python to PATH"** ← **THIS IS MANDATORY!**
+2. Click **"Install Now"**
+3. Wait for it to finish
+4. Click **"Close"**
 
-### Passo 4: Reiniciar o Computador
+### Step 4: Restart Your Computer
 
-Reinicie o computador para as mudanças funcionarem!
+Restart your computer for the changes to take effect!
 
-### Passo 5: Verificar Instalação
+### Step 5: Verify Installation
 
-Abra CMD/PowerShell novamente e digite:
+Open CMD/PowerShell again and type:
 ```bash
 python --version
 ```
 
-Se aparecer a versão, **Python está pronto!** ✅
+If it shows the version, **Python is ready!** ✅
 
 ---
 
-## ⚠️ Erros Comuns
+## ⚠️ Common Errors
 
-### ❌ "Add Python to PATH" não foi marcado
+### ❌ "Add Python to PATH" was not checked
 
-**Problema:** Python está instalado mas não funciona no terminal
+**Problem:** Python is installed but doesn't work in the terminal
 
-**Solução:**
-1. Desinstale Python
-2. Instale novamente
-3. **Marque "Add Python to PATH"** desta vez!
-4. Reinicie o computador
+**Solution:**
+1. Uninstall Python
+2. Install again
+3. **Check "Add Python to PATH" this time!**
+4. Restart your computer
 
-### ❌ Ainda não funciona após reinstalar
+### ❌ Still doesn't work after reinstalling
 
-**Solução:**
-1. Abra CMD como administrador
-2. Digite: `python --version`
-3. Se ainda não funcionar, reinicie o computador novamente
+**Solution:**
+1. Open CMD as administrator
+2. Type: `python --version`
+3. If it still doesn't work, restart your computer again
 
 ---
 
-## 🎯 Resumo
+## 🎯 Summary
 
-| Passo | O que fazer |
+| Step | What to do |
 |-------|-----------|
-| 1 | Verificar se tem Python: `python --version` |
-| 2 | Se não tiver, baixar em: https://www.python.org/downloads/ |
-| 3 | Instalar marcando **"Add Python to PATH"** |
-| 4 | Reiniciar computador |
-| 5 | Verificar novamente: `python --version` |
-| 6 | Pronto! Pode usar o projeto! |
+| 1 | Check if you have Python: `python --version` |
+| 2 | If not, download from: https://www.python.org/downloads/ |
+| 3 | Install checking **"Add Python to PATH"** |
+| 4 | Restart your computer |
+| 5 | Check again: `python --version` |
+| 6 | Done! You can use the project! |
 
 ---
 
-## ✅ Pronto!
+## ✅ Done!
 
-Agora você tem Python instalado e pode usar o Task Queue!
+Now you have Python installed and can use the Task Queue!
 
-**Próximo passo:** Dê duplo clique em `TaskQueueLauncher_v2.bat` e aproveite! 🚀
+**Next step:** Double-click `TaskQueueLauncher_v2.bat` and enjoy! 🚀
 
 ---
 
-## 💡 Dica Extra
+## 💡 Extra Tip
 
-Se tiver dúvidas sobre Python, acesse:
-- https://www.python.org/ - Site oficial
+If you have questions about Python, visit:
+- https://www.python.org/ - Official website
 - https://www.python.org/downloads/ - Downloads
 
-Mas para este projeto, você só precisa ter Python instalado. Nada mais!
+But for this project, you only need to have Python installed. Nothing else!
 
 ---
 
-**Desenvolvido por:** Lucas André S  
+**Developed by:** Lucas André S  
 **GitHub:** [@lucasandre16112000-png](https://github.com/lucasandre16112000-png)

@@ -1,74 +1,74 @@
-# ⚙️ Sistema de Fila de Tarefas Distribuído (Task Queue)
+# ⚙️ Distributed Task Queue System
 
-Um sistema robusto e profissional de **fila de tarefas assíncronas** com **Dashboard Web Visual**, demonstrando as melhores práticas em arquitetura de sistemas distribuídos.
+A robust and professional **asynchronous task queue system** with **Visual Web Dashboard**, demonstrating best practices in distributed systems architecture.
 
 ![Dashboard Screenshot](dashboard_screenshot.webp)
 
 ---
 
-## 🎯 O que é?
+## 🎯 What is it?
 
-Um **sistema de fila de tarefas** que:
-- ✅ Recebe tarefas para executar
-- ✅ Coloca na fila para processar
-- ✅ Executa uma por uma em background
-- ✅ Mostra o status em tempo real
-- ✅ Tenta novamente se falhar
+A **task queue system** that:
+- ✅ Receives tasks to execute
+- ✅ Puts them in a queue for processing
+- ✅ Executes them one by one in the background
+- ✅ Shows status in real-time
+- ✅ Retries if it fails
 
-Muito usado em aplicações web para processar tarefas pesadas sem travar a interface!
+Commonly used in web applications to process heavy tasks without freezing the interface!
 
 ---
 
-## ✨ Funcionalidades
+## ✨ Features
 
-| Funcionalidade | Descrição |
+| Feature | Description |
 |:---|:---|
-| **Dashboard Web** | Interface visual para criar e monitorar tarefas |
-| **5 Tipos de Tarefas** | Email, Relatório, Imagem, Sincronização, Limpeza |
-| **Estatísticas em Tempo Real** | Total, Pendentes, Processando, Concluídas, Falhadas |
-| **Taxa de Sucesso** | Cálculo automático da taxa de sucesso |
-| **Botão "Executar Todas"** | Cria todas as tarefas de uma vez para teste |
+| **Web Dashboard** | Visual interface to create and monitor tasks |
+| **5 Task Types** | Email, Report, Image, Synchronization, Cleanup |
+| **Real-Time Statistics** | Total, Pending, Processing, Completed, Failed |
+| **Success Rate** | Automatic success rate calculation |
+| **Execute All Button** | Creates all 5 tasks at once for testing |
 
 ---
 
-## 🚀 Como Usar (Guia Completo do Zero)
+## 🚀 How to Use (Complete Guide from Zero)
 
-### ⚠️ Pré-requisito: Python 3.8+
+### ⚠️ Requirement: Python 3.8+
 
-**Você PRECISA ter Python instalado!**
+**You NEED to have Python installed!**
 
-#### Passo 1: Instalar Python
+#### Step 1: Install Python
 
-1. Acesse: https://www.python.org/downloads/
-2. Baixe a versão mais recente (3.10 ou superior)
-3. Execute o instalador
-4. **⚠️ IMPORTANTE:** Durante a instalação, marque a opção **"Add Python to PATH"**
-5. Clique em "Install Now"
-6. Reinicie o computador
+1. Visit: https://www.python.org/downloads/
+2. Download the latest version (3.10 or higher)
+3. Run the installer
+4. **⚠️ IMPORTANT:** During installation, check the option **"Add Python to PATH"**
+5. Click "Install Now"
+6. Restart your computer
 
-#### Verificar se Python está instalado:
+#### Verify Python is installed:
 
-Abra **CMD** ou **PowerShell** e digite:
+Open **CMD** or **PowerShell** and type:
 ```bash
 python --version
 ```
 
-Se aparecer a versão (ex: `Python 3.12.10`), Python está pronto! ✓
+If it shows the version (ex: `Python 3.12.10`), Python is ready! ✓
 
 ---
 
-### 📥 Passo 1: Baixar o Projeto
+### 📥 Step 1: Download the Project
 
-**Opção A - Sem Git (Mais Fácil):**
+**Option A - Without Git (Easier):**
 
-1. Acesse: https://github.com/lucasandre16112000-png/04-task-queue
-2. Clique no botão verde **"Code"**
-3. Clique em **"Download ZIP"**
-4. Extraia o arquivo em uma pasta (ex: `C:\Users\[seu_usuario]\Desktop\04-task-queue`)
+1. Visit: https://github.com/lucasandre16112000-png/04-task-queue
+2. Click the green **"Code"** button
+3. Click **"Download ZIP"**
+4. Extract the file to a folder (ex: `C:\Users\[your_username]\Desktop\04-task-queue`)
 
-**Opção B - Com Git:**
+**Option B - With Git:**
 
-Abra PowerShell/CMD e execute:
+Open PowerShell/CMD and run:
 ```bash
 git clone https://github.com/lucasandre16112000-png/04-task-queue.git
 cd 04-task-queue
@@ -76,44 +76,44 @@ cd 04-task-queue
 
 ---
 
-### ▶️ Passo 2: Executar (2 Cliques!)
+### ▶️ Step 2: Run (2 Clicks!)
 
-**Opção A - Recomendada (Automática):**
+**Option A - Recommended (Automatic):**
 
-1. Navegue até a pasta do projeto
-2. Dê **duplo clique** em **`TaskQueueLauncher_v2.bat`**
-3. Aguarde alguns segundos
-4. **Dashboard abre automaticamente!**
+1. Navigate to the project folder
+2. **Double-click** on **`TaskQueueLauncher_v2.bat`**
+3. Wait a few seconds
+4. **Dashboard opens automatically!**
 
-O script vai:
-- ✅ Verificar Python
-- ✅ Instalar Flask (se necessário)
-- ✅ Baixar projeto (se necessário)
-- ✅ Iniciar servidor
-- ✅ Abrir navegador
+The script will:
+- ✅ Check Python
+- ✅ Install Flask (if needed)
+- ✅ Download project (if needed)
+- ✅ Start server
+- ✅ Open browser
 
-**Opção B - Simples:**
+**Option B - Simple:**
 
-1. Navegue até a pasta do projeto
-2. Dê **duplo clique** em **`INICIAR.bat`**
-3. Aguarde alguns segundos
-4. **Dashboard abre automaticamente!**
+1. Navigate to the project folder
+2. **Double-click** on **`INICIAR.bat`**
+3. Wait a few seconds
+4. **Dashboard opens automatically!**
 
-**Opção C - Manual (Para Programadores):**
+**Option C - Manual (For Programmers):**
 
-Abra PowerShell/CMD na pasta do projeto e execute:
+Open PowerShell/CMD in the project folder and run:
 ```bash
 pip install flask
 python app.py
 ```
 
-Depois abra o navegador em: http://localhost:5000
+Then open your browser at: http://localhost:5000
 
 ---
 
-### 🌐 Passo 3: Acessar a Dashboard
+### 🌐 Step 3: Access the Dashboard
 
-Se o navegador não abrir automaticamente, abra manualmente:
+If the browser doesn't open automatically, open it manually:
 
 ```
 http://localhost:5000
@@ -121,52 +121,52 @@ http://localhost:5000
 
 ---
 
-## 📊 Como Usar a Dashboard
+## 📊 How to Use the Dashboard
 
-### Criar Tarefas
+### Create Tasks
 
-Clique em um dos botões para criar tarefas:
+Click one of the buttons to create tasks:
 
-| Botão | O que faz |
+| Button | What it does |
 |:---|:---|
-| 📧 **Enviar Email** | Simula envio de email |
-| 📄 **Gerar Relatório** | Simula criação de PDF |
-| 🖼️ **Processar Imagem** | Simula aplicação de filtros |
-| 🔄 **Sincronizar Dados** | Simula sincronização de banco |
-| 🧹 **Limpar Cache** | Simula limpeza de dados |
-| ⚡ **Executar Todas** | Cria todas as 5 tarefas |
+| 📧 **Send Email** | Simulates email sending |
+| 📄 **Generate Report** | Simulates PDF creation |
+| 🖼️ **Process Image** | Simulates image filtering |
+| 🔄 **Sync Data** | Simulates database synchronization |
+| 🧹 **Clean Cache** | Simulates data cleanup |
+| ⚡ **Execute All** | Creates all 5 tasks |
 
-### Monitorar Tarefas
+### Monitor Tasks
 
-A dashboard mostra em tempo real:
+The dashboard shows in real-time:
 
-- **Total** - Quantidade total de tarefas criadas
-- **Pendentes** - Tarefas aguardando processamento
-- **Processando** - Tarefas sendo executadas agora
-- **Concluídas** - Tarefas finalizadas com sucesso
-- **Falhadas** - Tarefas que falharam
-- **Taxa de Sucesso** - Porcentagem de sucesso
+- **Total** - Total number of tasks created
+- **Pending** - Tasks waiting to be processed
+- **Processing** - Tasks being executed now
+- **Completed** - Tasks finished successfully
+- **Failed** - Tasks that failed
+- **Success Rate** - Success percentage
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 04-task-queue/
-├── 📜 app.py                    # Servidor Flask (Backend)
-├── 📜 TaskQueueLauncher_v2.bat  # Executável principal ⭐
-├── 📜 INICIAR.bat               # Executável simples
-├── 📜 requirements.txt          # Dependências
-├── 📜 README.md                 # Este arquivo
+├── 📜 app.py                    # Flask Server (Backend)
+├── 📜 TaskQueueLauncher_v2.bat  # Main executable ⭐
+├── 📜 INICIAR.bat               # Simple executable
+├── 📜 requirements.txt          # Dependencies
+├── 📜 README.md                 # This file
 │
 ├── 📂 templates/
-│   └── index.html               # Interface da dashboard
+│   └── index.html               # Dashboard interface
 │
 ├── 📂 static/
-│   ├── css/style.css            # Estilos visuais
-│   └── js/app.js                # Interatividade
+│   ├── css/style.css            # Visual styles
+│   └── js/app.js                # Interactivity
 │
-└── 📂 (Arquivos de teste)
+└── 📂 (Test files)
     ├── execution_output.txt
     ├── generate_screenshot.py
     └── screenshots/
@@ -174,85 +174,85 @@ A dashboard mostra em tempo real:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
-| Tecnologia | Propósito |
+| Technology | Purpose |
 |:---|:---|
-| **Python 3.8+** | Backend e processamento |
-| **Flask** | Servidor web e API REST |
-| **HTML5/CSS3** | Interface visual |
-| **JavaScript** | Interatividade |
-| **Threading** | Processamento assíncrono |
+| **Python 3.8+** | Backend and processing |
+| **Flask** | Web server and REST API |
+| **HTML5/CSS3** | Visual interface |
+| **JavaScript** | Interactivity |
+| **Threading** | Asynchronous processing |
 
 ---
 
-## ❌ Solução de Problemas
+## ❌ Troubleshooting
 
-### ❌ Erro: "Python não foi encontrado"
+### ❌ Error: "Python was not found"
 
-**Solução:**
-1. Instale Python: https://www.python.org/downloads/
-2. **IMPORTANTE:** Marque "Add Python to PATH" durante a instalação
-3. Reinicie o computador
-4. Execute o launcher novamente
+**Solution:**
+1. Install Python: https://www.python.org/downloads/
+2. **IMPORTANT:** Check "Add Python to PATH" during installation
+3. Restart your computer
+4. Run the launcher again
 
-### ❌ Erro: "Porta 5000 em uso"
+### ❌ Error: "Port 5000 is already in use"
 
-**Solução:**
-1. Feche outros programas que possam estar usando a porta 5000
-2. Ou edite `app.py` e mude `port=5000` para outra porta (ex: 5001)
-3. Salve e execute novamente
+**Solution:**
+1. Close other programs that might be using port 5000
+2. Or edit `app.py` and change `port=5000` to another port (ex: 5001)
+3. Save and run again
 
-### ❌ O navegador não abre automaticamente
+### ❌ Browser doesn't open automatically
 
-**Solução:**
-1. Abra seu navegador manualmente
-2. Acesse: http://localhost:5000
+**Solution:**
+1. Open your browser manually
+2. Visit: http://localhost:5000
 
-### ❌ Erro: "No module named 'flask'"
+### ❌ Error: "No module named 'flask'"
 
-**Solução:**
-Abra PowerShell/CMD e execute:
+**Solution:**
+Open PowerShell/CMD and run:
 ```bash
 pip install flask
 ```
 
-### ❌ Erro de permissão no PowerShell
+### ❌ PowerShell permission error
 
-**Solução:**
-Abra PowerShell como administrador e execute:
+**Solution:**
+Open PowerShell as administrator and run:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 ---
 
-## 📊 Arquivos Principais
+## 📊 Main Files
 
-| Arquivo | Descrição |
+| File | Description |
 |---------|-----------|
-| `TaskQueueLauncher_v2.bat` | ⭐ **Executável principal** - Com download automático |
-| `INICIAR.bat` | Executável simples - Pasta atual |
-| `app.py` | Servidor Flask |
-| `requirements.txt` | Dependências do projeto |
-| `templates/index.html` | Interface da dashboard |
-| `static/css/style.css` | Estilos CSS |
+| `TaskQueueLauncher_v2.bat` | ⭐ **Main executable** - With automatic download |
+| `INICIAR.bat` | Simple executable - Current folder |
+| `app.py` | Flask server |
+| `requirements.txt` | Project dependencies |
+| `templates/index.html` | Dashboard interface |
+| `static/css/style.css` | CSS styles |
 | `static/js/app.js` | JavaScript |
 
 ---
 
-## 🎓 Resumo Rápido
+## 🎓 Quick Summary
 
-**Para o cliente usar:**
+**For the client to use:**
 
-1. ✅ Instalar Python (https://www.python.org/downloads/)
-2. ✅ Baixar o projeto do GitHub
-3. ✅ Dê duplo clique em `TaskQueueLauncher_v2.bat`
-4. ✅ **Pronto! Tudo funciona sozinho!**
+1. ✅ Install Python (https://www.python.org/downloads/)
+2. ✅ Download the project from GitHub
+3. ✅ Double-click `TaskQueueLauncher_v2.bat`
+4. ✅ **Done! Everything works automatically!**
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 **Lucas André S**
 
@@ -260,13 +260,13 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ---
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está sob a licença MIT.
+This project is under the MIT license.
 
 ---
 
-**Desenvolvido com ❤️ por Lucas André S**
+**Developed with ❤️ by Lucas André S**
 
-**Versão:** 1.0.0  
-**Última atualização:** Janeiro 2026
+**Version:** 1.0.0  
+**Last update:** January 2026
