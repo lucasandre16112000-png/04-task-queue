@@ -56,10 +56,12 @@ echo.
 REM Iniciar servidor em background
 start "" /B python app.py
 
-REM Aguardar servidor iniciar
+REM Aguardar servidor iniciar (aumentado para 5 segundos)
 echo Aguardando servidor iniciar...
-timeout /t 3 /nobreak >nul
+timeout /t 5 /nobreak >nul
 
+echo.
+echo ================================================================================
 echo.
 echo Acesse: http://localhost:5000
 echo Pressione Ctrl+C para encerrar
@@ -67,7 +69,12 @@ echo.
 echo ================================================================================
 echo.
 
-REM Abrir navegador
-start http://localhost:5000
+REM Abrir navegador com PowerShell (mais confiável)
+powershell -Command "Start-Process 'http://localhost:5000'" >nul 2>&1
+
+if errorlevel 1 (
+    REM Fallback: usar comando start padrão
+    start http://localhost:5000
+)
 
 pause

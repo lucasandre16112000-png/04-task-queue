@@ -119,13 +119,14 @@ start "" /B python app.py
 
 echo Aguardando servidor iniciar...
 
-REM Aguardar servidor ficar online (máximo 30 segundos)
+REM Aguardar servidor ficar online (máximo 60 segundos)
 set /a count=0
 :wait_loop
 set /a count=!count!+1
 
-if !count! gtr 30 (
+if !count! gtr 60 (
     echo [AVISO] Timeout ao aguardar servidor
+    echo Abrindo navegador mesmo assim...
     goto :open_browser
 )
 
@@ -143,7 +144,14 @@ echo.
 REM Passo 7: Abrir navegador
 :open_browser
 echo [PASSO 6] Abrindo dashboard...
-start http://localhost:5000
+
+REM Usar PowerShell para abrir URL (mais confiável)
+powershell -Command "Start-Process 'http://localhost:5000'" >nul 2>&1
+
+if errorlevel 1 (
+    REM Fallback: usar comando start padrão
+    start http://localhost:5000
+)
 
 echo.
 echo ================================================================================
